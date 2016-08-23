@@ -6,6 +6,8 @@ require 'colorize'
 class LifeKey
   EOQ = :end_of_queue
 
+  # WORKER INNER CLASS ------------------------------------
+
   class Task
     def initialize(message)
       @message = message
@@ -15,16 +17,18 @@ class LifeKey
     def work(obj)
       Timeout.timeout(5) do
         sleep(obj.to_i + rand)
-        puts "-- Processing #{obj}".yellow.on_red
+        puts "-- Processing #{obj}".black.on_green
       end
     rescue Timeout::Error
       puts "* caught!! #{obj}".yellow
     end
   end
 
+  # MAIN CLASS --------------------------------------------
+
   def initialize(args)
     @n_threads = args[:n_threads] || 2
-    @limit = args[:limit]
+    @limit     = args[:limit]     || 10
     puts "Using #{@n_threads} threads" 
     @queue = Queue.new
     @queue_size = args[:queue_size] || 10
@@ -33,21 +37,13 @@ class LifeKey
 
   def run
     t1 = producer
-    sleep 5
     @n_threads.times { |n| consumer(n) }
 
     t1.join
     @workers.each(&:join)
   end
 
-  def task(obj)
-    Timeout.timeout(5) do
-      sleep(obj.to_i + rand)
-      puts "-- Processing #{obj}".yellow.on_green
-    end
-  rescue Timeout::Error
-    puts "* caught!! #{obj}".yellow
-  end
+  # FILL QUEUE WITH ITEMS ---------------------------------
 
   def producer
     Thread.new do
@@ -64,6 +60,7 @@ class LifeKey
     end
   end
 
+  # Checks if the queue has more items than the allowed limit, waits if true
   def check_queue_size
     loop do
       break if @queue.empty? || @queue.size <= @queue_size
@@ -71,6 +68,8 @@ class LifeKey
       sleep 1
     end
   end
+
+  # CONSUME FROM QUEUE AND THREAD -------------------------
 
   def consumer(n)
     Thread.new do
