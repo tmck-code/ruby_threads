@@ -4,6 +4,7 @@ require 'timeout'
 require 'colorize'
 
 class LifeKey
+  attr_reader :queue
   EOQ = :end_of_queue
 
   # WORKER INNER CLASS ------------------------------------
@@ -14,10 +15,11 @@ class LifeKey
       puts "Worker: #{@message}".green
     end
 
-    def work(obj)
+    def work(obj, queue_size)
       Timeout.timeout(5) do
-        sleep(obj.to_i + rand)
-        puts "-- Processing #{obj}".black.on_green
+        sleep(rand * 2)
+        (queue_size).times { print '.' }
+        puts "-- processing #{obj}".black.on_green
       end
     rescue Timeout::Error
       puts "* caught!! #{obj}".yellow
@@ -37,7 +39,12 @@ class LifeKey
 
   def run
     t1 = producer
+
+    sleep 3
+
     @n_threads.times { |n| consumer(n) }
+
+    sleep 1
 
     t1.join
     @workers.each(&:join)
@@ -49,11 +56,10 @@ class LifeKey
     Thread.new do
       @limit.times do |i|
         check_queue_size
-
+        (@queue.size).times { print '>' }
         puts "Pushing #{i}"
-        @queue << i
 
-        sleep 0.1
+        @queue << i
       end
       @queue << EOQ
       print "Producer exiting\n"
@@ -65,7 +71,7 @@ class LifeKey
     loop do
       break if @queue.empty? || @queue.size <= @queue_size
       puts "queue is #{@queue.size}"
-      sleep 1
+      sleep 0.1
     end
   end
 
@@ -76,11 +82,16 @@ class LifeKey
       puts "Started consumer #{n}"
       worker = Task.new(n)
       loop do
-        break if (payload = @queue.pop) == EOQ
+        if (payload = @queue.pop) == EOQ
+          puts '> EOQ detected'
+          break
+	end
 
+        (@queue.size).times { print '_' }
         print "- #{n} popped #{payload}\n\n"
 
-        @workers.push Thread.new { worker.work(payload) }
+        @workers.push Thread.new { worker.work(payload, @queue.size) }
+        sleep rand
       end
       print "Consumer exiting\n"
     end
