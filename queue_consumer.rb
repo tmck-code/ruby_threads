@@ -7,11 +7,35 @@ module Margin
   module_function
   
   def print_margin(type, val, queue_size)
-    queue_size ||= 0
-    (queue_size).times { print ' ' }
-    puts "#{type} #{val}"
+    str = "#{type} #{val}"
+    str =
+      case type
+      when :push    then print_push(queue_size, str)
+      when :pop     then print_pop(queue_size, str)
+      when :process then print_process(queue_size, str)
+      end
   end
 
+  def print_push(margin, msg)
+    str = ''
+    (margin - 1).times { str << '|' }
+    str << '-' << msg
+    puts str.yellow
+  end
+  
+  def print_pop(margin, msg)
+    str = '\\'
+    (margin - 1).times { str << '_' }
+    str << msg
+    puts str.underline
+  end
+  
+  def print_process(margin, msg)
+    str = ''
+    (margin - 1).times { str << ' ' }
+    str << '-' << msg
+    puts str.green
+  end
 end
 
 class LifeKey
@@ -49,9 +73,11 @@ class LifeKey
 
   def run
     t1 = producer
-    sleep rand * 5
+    sleep rand * 10
 
     @n_threads.times { |n| consumer(n) }
+
+    sleep rand
 
     t1.join
     @workers.each(&:join)
@@ -86,7 +112,7 @@ class LifeKey
 
   def consumer(n)
     Thread.new do
-      puts "Started consumer #{n}"
+      Margin.print_margin(:pop, 'consumer', @queue.size)
       worker = Task.new(n)
       loop do
         break if (payload = @queue.pop) == EOQ
