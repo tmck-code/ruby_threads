@@ -3,6 +3,17 @@ require 'thread'
 require 'timeout'
 require 'colorize'
 
+module Margin
+  module_function
+  
+  def print_margin(type, val, queue_size)
+    queue_size ||= 0
+    (queue_size).times { print ' ' }
+    puts "#{type} #{val}"
+  end
+
+end
+
 class LifeKey
   attr_reader :queue
   EOQ = :end_of_queue
@@ -17,12 +28,11 @@ class LifeKey
 
     def work(obj, queue_size)
       Timeout.timeout(5) do
-        sleep(rand * 2)
-        (queue_size).times { print '.' }
-        puts "-- processing #{obj}".black.on_green
+        sleep(rand * 7)
+        Margin.print_margin(:process, obj, queue_size)
       end
     rescue Timeout::Error
-      puts "* caught!! #{obj}".yellow
+      puts "* caught!! #{obj}".red
     end
   end
 
@@ -39,12 +49,9 @@ class LifeKey
 
   def run
     t1 = producer
-
-    sleep 3
+    sleep rand * 5
 
     @n_threads.times { |n| consumer(n) }
-
-    sleep 1
 
     t1.join
     @workers.each(&:join)
@@ -56,16 +63,16 @@ class LifeKey
     Thread.new do
       @limit.times do |i|
         check_queue_size
-        (@queue.size).times { print '>' }
-        puts "Pushing #{i}"
-
+        Margin.print_margin(:push, i, @queue.size)
         @queue << i
+
+        sleep rand
       end
       @queue << EOQ
       print "Producer exiting\n"
     end
   end
-
+  
   # Checks if the queue has more items than the allowed limit, waits if true
   def check_queue_size
     loop do
@@ -82,16 +89,11 @@ class LifeKey
       puts "Started consumer #{n}"
       worker = Task.new(n)
       loop do
-        if (payload = @queue.pop) == EOQ
-          puts '> EOQ detected'
-          break
-	end
-
-        (@queue.size).times { print '_' }
-        print "- #{n} popped #{payload}\n\n"
+        break if (payload = @queue.pop) == EOQ
+        Margin.print_margin(:pop, payload, @queue.size)
 
         @workers.push Thread.new { worker.work(payload, @queue.size) }
-        sleep rand
+        sleep rand * 2
       end
       print "Consumer exiting\n"
     end
