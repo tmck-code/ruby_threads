@@ -17,7 +17,7 @@ module Margin
   end
 
   def print_push(margin, msg)
-    str = ''
+    str = '_'
     (margin - 1).times { str << '|' }
     str << '-' << msg
     puts str.yellow
@@ -25,7 +25,7 @@ module Margin
   
   def print_pop(margin, msg)
     str = '\\'
-    (margin - 1).times { str << '_' }
+    (margin - 1).times { str << '|' }
     str << msg
     puts str.underline
   end
@@ -95,7 +95,7 @@ class LifeKey
         sleep rand
       end
       @queue << EOQ
-      print "Producer exiting\n"
+      Margin.print_margin :pop, "Producer exiting", 0
     end
   end
   
