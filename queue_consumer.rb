@@ -7,33 +7,35 @@ module Margin
   module_function
   
   def print_margin(type, val, queue_size)
-    str = "#{type} #{val}"
+    str = 
     str =
       case type
-      when :push    then print_push(queue_size, str)
-      when :pop     then print_pop(queue_size, str)
-      when :process then print_process(queue_size, str)
+      when :push    then print_push(queue_size, val)
+      when :pop     then print_pop(queue_size, val)
+      when :process then print_process(queue_size, val)
       end
   end
 
-  def print_push(margin, msg)
-    str = '_'
-    (margin - 1).times { str << '|' }
-    str << '-' << msg
+  def print_push(margin, val)
+    str = '|'
+    (margin).times { str << '| ' }
+    str << '-' << "push #{val.first}"
     puts str.yellow
   end
   
-  def print_pop(margin, msg)
-    str = '\\'
-    (margin - 1).times { str << '|' }
-    str << msg
-    puts str.underline
+  def print_pop(margin, val)
+    str = ''
+    val[1].times { str << ' '} unless val[0].is_a? String
+    str << '\\'
+    (margin - 1).times { str << '| ' }
+    str << "pop #{val[0]}".underline
+    puts str
   end
   
-  def print_process(margin, msg)
+  def print_process(margin, val)
     str = ''
     (margin - 1).times { str << ' ' }
-    str << '-' << msg
+    str << '-' << "process #{val.first}"
     puts str.green
   end
 end
@@ -45,14 +47,12 @@ class LifeKey
   # WORKER INNER CLASS ------------------------------------
 
   class Task
-    def initialize(message)
-      @message = message
-      puts "Worker: #{@message}".green
+    def initialize(id)
+      @id = id.to_i
     end
-
     def work(obj, queue_size)
       Timeout.timeout(5) do
-        sleep(rand * 7)
+        sleep(rand * 3)
         Margin.print_margin(:process, obj, queue_size)
       end
     rescue Timeout::Error
@@ -73,11 +73,11 @@ class LifeKey
 
   def run
     t1 = producer
-    sleep rand * 10
+    sleep rand
 
     @n_threads.times { |n| consumer(n) }
 
-    sleep rand
+    sleep 1
 
     t1.join
     @workers.each(&:join)
@@ -89,13 +89,13 @@ class LifeKey
     Thread.new do
       @limit.times do |i|
         check_queue_size
-        Margin.print_margin(:push, i, @queue.size)
-        @queue << i
+        payload = [i, @queue.size + 1]
+        Margin.print_margin(:push, payload, @queue.size)
 
-        sleep rand
+        @queue << payload
       end
       @queue << EOQ
-      Margin.print_margin :pop, "Producer exiting", 0
+      puts "Producer exiting"
     end
   end
   
@@ -112,7 +112,7 @@ class LifeKey
 
   def consumer(n)
     Thread.new do
-      Margin.print_margin(:pop, 'consumer', @queue.size)
+      puts "consumer #{n}"
       worker = Task.new(n)
       loop do
         break if (payload = @queue.pop) == EOQ
