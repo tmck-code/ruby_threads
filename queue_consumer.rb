@@ -3,42 +3,7 @@ require 'thread'
 require 'timeout'
 require 'colorize'
 
-module Margin
-  module_function
-  
-  def print_margin(type, val, queue_size)
-    str = 
-    str =
-      case type
-      when :push    then print_push(queue_size, val)
-      when :pop     then print_pop(queue_size, val)
-      when :process then print_process(queue_size, val)
-      end
-  end
-
-  def print_push(margin, val)
-    str = '|'
-    (margin).times { str << '| ' }
-    str << '-' << "push #{val.first}"
-    puts str.yellow
-  end
-  
-  def print_pop(margin, val)
-    str = ''
-    val[1].times { str << ' '} unless val[0].is_a? String
-    str << '\\'
-    (margin - 1).times { str << '| ' }
-    str << "pop #{val[0]}".underline
-    puts str
-  end
-  
-  def print_process(margin, val)
-    str = ''
-    (margin - 1).times { str << ' ' }
-    str << '-' << "process #{val.first}"
-    puts str.green
-  end
-end
+require_relative 'margin'
 
 class LifeKey
   attr_reader :queue
@@ -53,7 +18,7 @@ class LifeKey
     def work(obj, queue_size)
       Timeout.timeout(5) do
         sleep(rand * 3)
-        Margin.print_margin(:process, obj, queue_size)
+        # Margin.print_margin(:process, obj, queue_size)
       end
     rescue Timeout::Error
       puts "* caught!! #{obj}".red
@@ -73,7 +38,7 @@ class LifeKey
 
   def run
     t1 = producer
-    sleep rand
+    sleep 3
 
     @n_threads.times { |n| consumer(n) }
 
@@ -93,6 +58,7 @@ class LifeKey
         Margin.print_margin(:push, payload, @queue.size)
 
         @queue << payload
+        sleep rand
       end
       @queue << EOQ
       puts "Producer exiting"
@@ -112,7 +78,6 @@ class LifeKey
 
   def consumer(n)
     Thread.new do
-      puts "consumer #{n}"
       worker = Task.new(n)
       loop do
         break if (payload = @queue.pop) == EOQ
