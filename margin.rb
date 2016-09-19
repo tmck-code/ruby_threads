@@ -2,16 +2,35 @@ require 'trollop'
 require 'thread'
 require 'timeout'
 require 'colorize'
+require 'yaml'
 
 module Margin
   module_function
+
+  # Char & line definitions --------------------
+
+  CHARS = {
+    r_d:     "\u250e".encode('utf-8').yellow,
+    d_r:     "\u2516".encode('utf-8').yellow,
+    r:       "\u2500".encode('utf-8').yellow,
+    dbl_r:   "\u2550".encode('utf-8').green,
+    dbl_d_r: "\u2558".encode('utf-8').green,
+    rnd_d_r: "\u2570".encode('utf-8').blue,
+    rnd_r_d: "\u256d".encode('utf-8').yellow,
+  }
   
-  def print_margin(type, val, queue_size)
+  LINES = {
+    process: CHARS[:r_d] + CHARS[:r] * 10
+  }.freeze
+  
+  # Queue action methods -----------------------
+  
+  def print_margin(type, val, q_size)
     str =
       case type
-      when :push    then print_push(queue_size, val)
-      when :pop     then print_pop(queue_size, val)
-      when :process then print_process(queue_size, val)
+      when :push    then print_push(q_size, val)
+      when :pop     then print_pop(q_size, val)
+      when :process then print_process(q_size, val)
       end
   end
 
