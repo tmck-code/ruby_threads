@@ -13,7 +13,7 @@ module MarginTest
   end
 
   def test_chars
-    Margin::CHARS.each do |key, char|
+    Margin::CHAR.each do |key, char|
       printf "%-12s: %-2s\n", key, char
     end
   end

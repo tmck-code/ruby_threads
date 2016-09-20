@@ -5,32 +5,17 @@ require 'colorize'
 
 require_relative 'margin'
 
+# A demonstration of a ruby queue producer-consumer
 class LifeKey
   attr_reader :queue
   EOQ = :end_of_queue
-
-  # WORKER INNER CLASS ------------------------------------
-
-  class Task
-    def initialize(id)
-      @id = id.to_i
-    end
-    def work(obj, queue_size)
-      Timeout.timeout(5) do
-        sleep(rand * 3)
-        # Margin.print_margin(:process, obj, queue_size)
-      end
-    rescue Timeout::Error
-      puts "* caught!! #{obj}".red
-    end
-  end
 
   # MAIN CLASS --------------------------------------------
 
   def initialize(args)
     @n_threads = args[:n_threads] || 2
     @limit     = args[:limit]     || 10
-    puts "Using #{@n_threads} threads" 
+    puts "Using #{@n_threads} threads"
     @queue = Queue.new
     @queue_size = args[:queue_size] || 10
     @workers = []
@@ -61,7 +46,7 @@ class LifeKey
         sleep rand
       end
       @queue << EOQ
-      puts "Producer exiting"
+      puts 'Producer exiting'
     end
   end
   
