@@ -9,18 +9,27 @@ module Margin
 
   # Char & line definitions --------------------
 
-  CHARS = {
+  CHAR = {
     r_d:     "\u250e".encode('utf-8').yellow,
-    d_r:     "\u2516".encode('utf-8').yellow,
+    d_r:     "\u2514".encode('utf-8').yellow,
     r:       "\u2500".encode('utf-8').yellow,
+    d:       "\u2502".encode('utf-8').green,
+    l_r_d:   "\u252c".encode('utf-8').yellow,
     dbl_r:   "\u2550".encode('utf-8').green,
     dbl_d_r: "\u2558".encode('utf-8').green,
-    rnd_d_r: "\u2570".encode('utf-8').blue,
+    dbl_u_d_r: "\u255e".encode('utf-8').green,
+    dbl_r_d: "\u2564".encode('utf-8').green,
+    rnd_d_r: "\u2570".encode('utf-8').yellow,
     rnd_r_d: "\u256d".encode('utf-8').yellow,
+    pr_stop: "\u2509".encode('utf-8').green,
   }
   
   LINES = {
-    process: CHARS[:r_d] + CHARS[:r] * 10
+    push:    CHAR[:r_d] + CHAR[:r] * 10,
+    process: CHAR[:dbl_u_d_r] + CHAR[:dbl_r] + 
+      CHAR[:dbl_r_d] + CHAR[:dbl_r] * 5 + CHAR[:pr_stop],
+    process2: CHAR[:d] + ' ' + CHAR[:dbl_d_r] + CHAR[:dbl_r] + 
+      CHAR[:dbl_r_d] + CHAR[:dbl_r] * 5 + CHAR[:pr_stop],
   }.freeze
   
   # Queue action methods -----------------------
@@ -35,18 +44,17 @@ module Margin
   end
 
   def print_push(margin, val)
-    str = '| '
-    (margin).times { str << '| ' }
-    str << '-' << "push #{val.first}"
+    str = CHAR[:rnd_d_r] + CHAR[:r] + CHAR[:l_r_d]
+    (margin).times { str << CHAR[:r] * 2 }
+    str << CHAR[:pr_stop] << " push #{val.first}"
     puts str.yellow
   end
   
   def print_pop(margin, val)
     str = ''
-    (val[1] - 1)
-    .times { str << '  '} unless val[0].is_a? String
-    str << '\\ '
-    margin.times { str << '| ' }
+    (val[1] - 1).times { str << '  '} unless val[0].is_a? String
+    str << CHAR[:rnd_d_r]
+    margin.times { str << CHAR[:pr_stop] * 2 }
     str << "pop #{val[0]}".underline
     puts str
   end
