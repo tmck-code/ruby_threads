@@ -1,5 +1,6 @@
 #! /usr/bin/env ruby
 
+require 'trollop'
 require 'colorize'
 
 # Prints all Unicode 25xx characters
@@ -9,10 +10,11 @@ module UnicodeTest
   START = "\u2500".ord.freeze
   FIN   = "\u257F".ord.freeze
 
-  def run
+  def run(width)
+    width ||= 16
     n = START
     loop do
-      row_fin = n + 16
+      row_fin = n + width
       (n..row_fin).each { |curr| print_hex(curr) }
       puts
       (n..row_fin).each { |curr| print_unicode(curr) }
@@ -33,7 +35,7 @@ end
 
 if $PROGRAM_NAME == __FILE__
   args = Trollop.options do
-    opt :width, 'The max no. of chars printed per row', type: :string
+    opt :width, 'The max no. of chars printed per row', type: :integer
   end
   UnicodeTest.run(args.width)
 end
