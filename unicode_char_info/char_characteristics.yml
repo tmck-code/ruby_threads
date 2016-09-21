@@ -1,0 +1,430 @@
+chars:
+- char: 2500
+  attributes:
+    - thin, h_straight
+- char: 2501
+  attributes:
+    - solid, h_straight
+- char: 2502
+  attributes:
+    - thin, v_straight
+- char: 2503
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2504
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2505
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2506
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2507
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2508
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2509
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 250a
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 250a
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 250b
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 250c
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 250d
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 250e
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 250f
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2510
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2511
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2512
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2513
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2514
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2514
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2515
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2516
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2517
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2518
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2519
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 251a
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 251b
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 251c
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 251d
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 251e
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 251e
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 251f
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2520
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2521
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2522
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2523
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2524
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2525
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2526
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2527
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2528
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2528
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2529
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 252a
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 252b
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 252c
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 252d
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 252e
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 252f
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2530
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2531
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2532
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2532
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2533
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2534
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2535
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2536
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2537
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2538
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2539
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 253a
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 253b
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 253c
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 253c
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 253d
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 253e
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 253f
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2540
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2541
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2542
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2543
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2544
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2545
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2546
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2546
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2547
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2548
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2549
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 254a
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 254b
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 254c
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 254d
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 254e
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 254f
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2550
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2550
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2551
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2552
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2553
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2554
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2555
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2556
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2557
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2558
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2559
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 255a
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 255a
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 255b
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 255c
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 255d
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 255e
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 255f
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2560
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2561
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2562
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2563
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2564
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2564
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2565
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2566
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2567
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2568
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2569
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 256a
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 256b
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 256c
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 256d
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 256e
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 256e
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 256f
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2570
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2571
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2572
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2573
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2574
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2575
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2576
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2577
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2578
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2578
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2579
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 257a
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 257b
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 257c
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 257d
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 257e
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 257f
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2580
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2581
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+- char: 2582
+  attributes:
+    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
