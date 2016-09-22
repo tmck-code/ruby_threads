@@ -48,12 +48,12 @@ class UnicodeTest
   def print_seq
     n = START
     loop do
-      row_fin = n + @width
+      row_fin = n + (@width - 1)
       (n..row_fin).each { |curr| print_hex(curr) }
       puts
       (n..row_fin).each { |curr| print_unicode(curr) }
       puts "\n\n"
-      n = row_fin
+      n = row_fin + 1
       break if n >= FIN
     end
   end

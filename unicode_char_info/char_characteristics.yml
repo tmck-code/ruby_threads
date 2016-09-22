@@ -10,7 +10,7 @@ chars:
     - thin, v_straight
 - char: 2503
   attributes:
-    - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
+    - solid, v_straight
 - char: 2504
   attributes:
     - thin, solid, dbl, dotted, round, t_section, elbow, v_straight, h_straight
