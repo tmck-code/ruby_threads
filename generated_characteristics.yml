@@ -1,0 +1,1496 @@
+---
+9472:
+  :symbol: "─"
+  :options:
+    th: true
+    h: true
+9473:
+  :symbol: "━"
+  :options:
+    s: true
+    h: true
+9474:
+  :symbol: "│"
+  :options:
+    th: true
+    v: true
+9475:
+  :symbol: "┃"
+  :options:
+    th: true
+    v: true
+9476:
+  :symbol: "┄"
+  :options:
+    d: true
+    h: true
+9477:
+  :symbol: "┅"
+  :options:
+    d: true
+    s: true
+    h: true
+9478:
+  :symbol: "┆"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9479:
+  :symbol: "┇"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9480:
+  :symbol: "┈"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9481:
+  :symbol: "┉"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9482:
+  :symbol: "┊"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9483:
+  :symbol: "┋"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9484:
+  :symbol: "┌"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9485:
+  :symbol: "┍"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9486:
+  :symbol: "┎"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9487:
+  :symbol: "┏"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9488:
+  :symbol: "┐"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9489:
+  :symbol: "┑"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9490:
+  :symbol: "┒"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9491:
+  :symbol: "┓"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9492:
+  :symbol: "└"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9493:
+  :symbol: "┕"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9494:
+  :symbol: "┖"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9495:
+  :symbol: "┗"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9496:
+  :symbol: "┘"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9497:
+  :symbol: "┙"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9498:
+  :symbol: "┚"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9499:
+  :symbol: "┛"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9500:
+  :symbol: "├"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9501:
+  :symbol: "┝"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9502:
+  :symbol: "┞"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9503:
+  :symbol: "┟"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9504:
+  :symbol: "┠"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9505:
+  :symbol: "┡"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9506:
+  :symbol: "┢"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9507:
+  :symbol: "┣"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9508:
+  :symbol: "┤"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9509:
+  :symbol: "┥"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9510:
+  :symbol: "┦"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9511:
+  :symbol: "┧"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9512:
+  :symbol: "┨"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9513:
+  :symbol: "┩"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9514:
+  :symbol: "┪"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9515:
+  :symbol: "┫"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9516:
+  :symbol: "┬"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9517:
+  :symbol: "┭"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9518:
+  :symbol: "┮"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9519:
+  :symbol: "┯"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9520:
+  :symbol: "┰"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9521:
+  :symbol: "┱"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9522:
+  :symbol: "┲"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9523:
+  :symbol: "┳"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9524:
+  :symbol: "┴"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9525:
+  :symbol: "┵"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9526:
+  :symbol: "┶"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9527:
+  :symbol: "┷"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9528:
+  :symbol: "┸"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9529:
+  :symbol: "┹"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9530:
+  :symbol: "┺"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9531:
+  :symbol: "┻"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9532:
+  :symbol: "┼"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9533:
+  :symbol: "┽"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9534:
+  :symbol: "┾"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9535:
+  :symbol: "┿"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9536:
+  :symbol: "╀"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9537:
+  :symbol: "╁"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9538:
+  :symbol: "╂"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9539:
+  :symbol: "╃"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9540:
+  :symbol: "╄"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9541:
+  :symbol: "╅"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9542:
+  :symbol: "╆"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9543:
+  :symbol: "╇"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9544:
+  :symbol: "╈"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9545:
+  :symbol: "╉"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9546:
+  :symbol: "╊"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9547:
+  :symbol: "╋"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9548:
+  :symbol: "╌"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9549:
+  :symbol: "╍"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9550:
+  :symbol: "╎"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9551:
+  :symbol: "╏"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9552:
+  :symbol: "═"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9553:
+  :symbol: "║"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9554:
+  :symbol: "╒"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9555:
+  :symbol: "╓"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9556:
+  :symbol: "╔"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9557:
+  :symbol: "╕"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9558:
+  :symbol: "╖"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9559:
+  :symbol: "╗"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9560:
+  :symbol: "╘"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9561:
+  :symbol: "╙"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9562:
+  :symbol: "╚"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9563:
+  :symbol: "╛"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9564:
+  :symbol: "╜"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9565:
+  :symbol: "╝"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9566:
+  :symbol: "╞"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9567:
+  :symbol: "╟"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9568:
+  :symbol: "╠"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9569:
+  :symbol: "╡"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9570:
+  :symbol: "╢"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9571:
+  :symbol: "╣"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9572:
+  :symbol: "╤"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9573:
+  :symbol: "╥"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9574:
+  :symbol: "╦"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9575:
+  :symbol: "╧"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9576:
+  :symbol: "╨"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9577:
+  :symbol: "╩"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9578:
+  :symbol: "╪"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9579:
+  :symbol: "╫"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9580:
+  :symbol: "╬"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9581:
+  :symbol: "╭"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9582:
+  :symbol: "╮"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9583:
+  :symbol: "╯"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9584:
+  :symbol: "╰"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9585:
+  :symbol: "╱"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9586:
+  :symbol: "╲"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9587:
+  :symbol: "╳"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9588:
+  :symbol: "╴"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9589:
+  :symbol: "╵"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9590:
+  :symbol: "╶"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9591:
+  :symbol: "╷"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9592:
+  :symbol: "╸"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9593:
+  :symbol: "╹"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9594:
+  :symbol: "╺"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9595:
+  :symbol: "╻"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9596:
+  :symbol: "╼"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9597:
+  :symbol: "╽"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9598:
+  :symbol: "╾"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false
+9599:
+  :symbol: "╿"
+  :options:
+    :th: false
+    :s: false
+    :dbl: false
+    :d: false
+    :r: false
+    :t: false
+    :e: false
+    :v: false
+    :h: false

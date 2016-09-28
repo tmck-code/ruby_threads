@@ -2,6 +2,7 @@
 
 require 'yaml'
 require 'json'
+require 'pp'
 
 # Takes user input and creates a hash of the characteristics for each
 # unicode box-drawing char
@@ -10,7 +11,6 @@ class Characteristics
   FIN   = "\u257F".ord.freeze
 
   OPTIONS = {
-    th:  :thin,
     s:   :solid,
     dbl: :dbl,
     d:   :dotted,
@@ -30,29 +30,40 @@ class Characteristics
             hash[key] = false
           end
       }
+      @outfile = 'generated_characteristics.yml'
+      Signal.trap("TERM") { shutdown }
     end
   end
 
+  def shutdown
+    File.open(@outfile, 'w') { |f| f.write @chars.to_yaml }
+    exit
+  end
+
   def generate
-    info
-    (START..FIN).each { |char| get_options(char) }
+    @chars.each_with_index do |(key, char), i|
+      puts "#{i}/#{@chars.size}"
+      char[:options] = get_options(char)
+      puts YAML.dump char[:options]
+    end
+    puts JSON.pretty_generate(@chars)
   end
 
   def info
     puts '> All chars:'
-    puts CHARS
+    puts @chars
     puts '> All options:'
     puts JSON.pretty_generate(OPTIONS)
   end
 
   def get_options(char)
-    loop do
-      break if (opt = STDIN.gets.strip == 'p')
-      puts "options: "
-      opt = STDIN.gets.strip
-      next if OPTIONS[opt].nil?
-      @chars[char]
-    end
+    pp OPTIONS
+    puts char[:symbol]
+    opts = STDIN.gets.strip.split(',')
+
+    return nil if opts.first == 'p'
+    shutdown if opts.first == 'exit'
+    opts.each_with_object({}) { |o, h| h[o] = true }
   end
 end
 
