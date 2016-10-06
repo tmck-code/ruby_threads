@@ -7,9 +7,9 @@ class ThreadPool
   EOQ = :end_of_queue # Marker for the end of the queue
 
   def initialize
-    @n_threads = 5               # No. of workers
-    @delay     = 1               # Avg. response time for worker processes
-    @queue = SizedQueue.new(100) # Max 100 items waiting for workers
+    @n_threads = 5
+    @delay     = 1
+    @queue = SizedQueue.new(100) # Max 100 items
 
     print "> Using #{@n_threads} threads\n"
   end
@@ -18,7 +18,9 @@ class ThreadPool
     print "! PRODUCER STARTING\n"
     t1 = Thread.new { producer }
 
-    t2 = Array.new(@n_threads) { |n| Thread.new { worker(n) } }
+    t2 = Array.new(@n_threads) do |n|
+      Thread.new { worker(n) }
+    end
 
     t1.join
     print "\n! PRODUCER EXITING, pushed #{EOQ}\n\n"
@@ -29,13 +31,13 @@ class ThreadPool
 
   def producer
     20.times do |i|
-      payload = (rand * 2).round(2) # Payload is random float
-      sleep 0.1                     # Simulate some preprocessing expense
+      payload = (rand * 2).round(2)
+      sleep 0.1 # Simulate preprocessing
 
       print "> pushing ##{i}: #{payload}\n"
       @queue.push payload
     end
-    @queue.push EOQ # Add the end-of-queue object when we're finished
+    @queue.push EOQ # Add the EOQ
   end
 
   def worker(id)
@@ -47,7 +49,7 @@ class ThreadPool
       end
 
       work(payload, id)
-      sleep @delay # Rate limit consumption per worker
+      sleep @delay # Rate limit
     end
     print ">>WORKER #{id} EXITING\n"
   end
