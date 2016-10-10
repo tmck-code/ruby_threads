@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{latexsym}
+
+\usepackage{tikz} \usetikzlibrary{matrix,shapes,arrows,positioning,chains}
+\title{Readme: Lexer \& FullContact Enrichment}
+\author{tom.mckeesick@lexer.io}
+\date{2016-03-18}
+
+\tikzstyle{decision} = [diamond, draw, fill=white!20, text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=white!20, text width=10em, text centered, rounded corners, minimum height=4em, node distance=2cm]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=green!10, text centered, node distance=5cm, minimum width=4em, minimum height=4em]
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\cleardoublepage
+
+\part{Introduction}
+\section{Overview}
+\subsection{Intended Function}
+The fullcontact repository is the collection of all programs and scripts related to the unification of Lexer identities with the FullContact API.
+Currently, it has just a few responsibilities:
+\begin{enumerate}
+  \item Consume identity objects from a queue
+  \item Format API request depending on the available attributes of each identity.
+  \item Send a batch query to the FullContact API.
+  \item Extract the new attributes for each identity from the API response, and create those attributes for each identity.
+  \item Provide a report detailing the number of FullContact attributes that have been used
+\end{enumerate}
+
+\cleardoublepage
+
+\part{Structure}
+\section{Structure Overview}
+\subsection{Main functionality contained in /lib}
+\begin{description}
+  \item[queue-consumer] A thread-safe background worker that consumes identities in batches from a Rabbit MD queue
+  \item[query] Receives identities in batches from the \textit{queue-consumer}, extracts the attributes need for the FullContact API query, sends the queries and passes along the response.
+  \item[process-responses] Receives the JSON API response (and the original identity batch) from \textit{query-api}. 
+It then extracts the required attributes and processes them accordingly with the namespace com.fullcontact. It then creates the new identities amd passes them to enrich.
+ \item[enrich] Receives the batch of updated identities from \textit{process-responses} and inserts them into the database.
+ \item[report] Takes a recurring snapshot of all identities and produces a report om the number of com.fullcontact namespace attributes.
+\end{description}
+
+\section{Class Structure}
+
+\begin{tikzpicture}[node distance = 2cm, auto]
+ \node [cloud, fill=red!30] (queue) 
+       {\textbf{identity-queue}};
+ \node [block, below of=queue] (worker) 
+       {queue-consumer};
+ \node [cloud, right of=worker] (worker-helper)
+       {\textit{parse-identity}};
+ \node [block, below of=worker] (query) 
+       {query-fullcontact};
+ \node [cloud, right of=query] (query-helper)
+       {\textit{query-helper}};
+ \node [block, below of=query] (process) 
+       {process-responses};
+ \node [cloud, left of=process] (process-helper)
+       {\textit{response-details}};
+ \node [cloud, right of=process] (attr-helper)
+       {\textit{attribute-helper}};
+ \node [block, below of=process] (enrich)
+       {enrich};
+ \node [cloud, right of=enrich] (id-helper)
+       {\textit{parse-identity}};
+ \node [cloud, left of=enrich] (enrich-helper)
+       {\textit{enrichment-helper}};
+ \node [cloud, below of=enrich, fill=blue!10] 
+       (id-api) {identity API};
+       (stop) {stop};
+% Draw edges
+ \path [line] (queue) -- (worker);
+ \path [line] (worker) -- (worker-helper);
+ \path [line] (worker-helper) -- (worker);
+ \path [line] (worker) -- (query);
+ \path [line] (query) -- (query-helper);
+ \path [line] (query-helper) -- (query);
+ \path [line] (query) -- (process);
+ \path [line] (process) -- (process-helper);
+ \path [line] (process-helper) -- (process);
+ \path [line] (query) -- (process);
+ \path [line] (process) -- (attr-helper);
+ \path [line] (attr-helper) -- (process);
+ \path [line] (process) -- (enrich);
+ \path [line] (enrich) -- (enrich-helper);
+ \path [line] (enrich-helper) -- (enrich);
+ \path [line] (enrich) -- (id-helper);
+ \path [line] (id-helper) -- (enrich);
+ \path [line] (enrich) -- (id-api);
+
+\end{tikzpicture}
+
+\cleardoublepage
+\part{Disscussion}
+
+\end{document}
