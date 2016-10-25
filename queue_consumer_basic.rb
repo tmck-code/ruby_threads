@@ -45,7 +45,7 @@ class LifeKey
       TOTAL_ITEMS.times do |i|
         payload = (rand * 10).round(2) # Payload is an integer, increases by 1 every iteration
 
-        print Time.now.strftime('%H:%M:%S.%6N') + "] > pushing " + " ##{i}: #{payload}\n".underline
+	print Time.now.strftime('%H:%M:%S.%6N') + "] > pushing " + " ##{i}: " + payload.to_s.underline + "\n"
         @queue.push payload
         # sleep rand
       end
