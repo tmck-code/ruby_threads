@@ -6,30 +6,23 @@ require 'thread'
 require 'timeout'
 require 'colorize'
 
-require_relative 'margin'
-
 # A minimal working demonstration of a ruby queue producer-consumer.
 class LifeKey
   attr_reader :queue
-  EOQ = :end_of_queue
 
-  N_THREADS     = 10 # The max amount of workers
-  LIMIT_WAITING = 50 # The max amount of queue items waiting for workers
-  LIMIT_CURRENT = 50 # The max amount of work items currently in progress
-  DELAY         = 1  # The average task response time in seconds.
-  TOTAL_ITEMS   = 20 # The number of payloads to produce
+  EOQ = :end_of_queue # Marker for the end of the queue
 
-  def initialize(args)
-    @n_threads     = N_THREADS     || args[:n_threads]
-    @limit_waiting = LIMIT_WAITING || args[:limit_waiting]
-    @limit_current = LIMIT_CURRENT || args[:limit_current]
-    @delay         = DELAY         || args[:delay]
-    @total         = TOTAL_ITEMS   || args[:total]
+  N_THREADS     = 10  # The max amount of workers
+  LIMIT_WAITING = 50  # The max amount of queue items waiting for workers
+  DELAY         = 0.2 # The average task response time in seconds.
+  TOTAL_ITEMS   = 200 # The number of payloads to produce
+  TIMEOUT       = 0.5 # The time limit for worker processes
 
-    @queue = Queue.new
-    @workers = []
+  def initialize
+    @queue = SizedQueue.new(LIMIT_WAITING)
+    @eoq_reached = false
 
-    puts "> Using #{@n_threads} threads"
+    print Time.now.strftime('%H:%M:%S.%6N') + "] > Using #{N_THREADS} threads\n"
   end
 
   # Main method -------------------------------------------
@@ -37,82 +30,84 @@ class LifeKey
   def run
     t1 = producer
 
-    @n_threads.times { |n| consumer(n) }
-
-    sleep 1
+    t2 = Array.new(N_THREADS) { |n| worker(n) }
 
     t1.join
-    @workers.each(&:join)
+    t2.each(&:join)
+    puts '> Process complete'.green
   end
 
   # Queue methods -----------------------------------------
 
   def producer
+    print Time.now.strftime('%H:%M:%S.%6N') + "] ! PRODUCER STARTING\n"
     Thread.new do
-      @total.times do |i|
-        check_queue_size
+      TOTAL_ITEMS.times do |i|
+        payload = (rand * 10).round(2) # Payload is an integer, increases by 1 every iteration
 
-        payload = i # Payload is a random digit, just for simplicity
-
-        @queue << payload
+	print Time.now.strftime('%H:%M:%S.%6N') + "] > pushing " + " ##{i}: " + payload.to_s.underline + "\n"
+        @queue.push payload
+        # sleep rand
       end
-      @queue << EOQ # Add the end-of-queue object when we're finished
-      puts "\n! Producer exiting\n"
-    end
-  end
-
-  # Checks if the queue has more items than the allowed limit, waits if true
-  def check_queue_size
-    loop do
-      break if @queue.empty? || @queue.size <= @limit_waiting
-      puts "queue is #{@queue.size}"
-      sleep 0.05
+      @queue.push EOQ # Add the end-of-queue object when we're finished
+      print Time.now.strftime('%H:%M:%S.%6N') + "] \n! PRODUCER EXITING, pushed #{EOQ}\n\n"
     end
   end
 
   # Consume from queue and thread
-  def consumer(id)
+  def worker(id)
+    print Time.now.strftime('%H:%M:%S.%6N') + "] \n! WORKER #{id} STARTING\n\n"
     Thread.new do
       worker = Task.new(id)
       loop do
-        break if (payload = @queue.pop) == EOQ # Break if we're at the end
+        payload = @queue.pop
+        break if queue_empty?(payload, id)
 
-        @workers.push Thread.new { worker.work(payload) }
-        sleep rand * 2
+        send_to_worker(worker, payload)
+        sleep rand * 2 # Rate limit consumption per worker
       end
-      puts "\n! Consumer exiting\n"
+      print Time.now.strftime('%H:%M:%S.%6N') + "] >>WORKER #{id} EXITING\n\n"
     end
+  end
+
+  def queue_empty?(payload, worker_id)
+    if payload == EOQ
+      @queue.push EOQ
+      print Time.now.strftime('%H:%M:%S.%6N') + "] ! worker #{worker_id} reached EOQ\n"
+      return true
+    end
+    false
+  end
+
+  def send_to_worker(worker, payload, retries = 3)
+    payload = (payload - 2).round(2) if retries != 3
+    payload = 1 if retries == 1
+
+    Timeout.timeout(TIMEOUT) { worker.work(payload) }
+  rescue Timeout::Error
+    print Time.now.strftime('%H:%M:%S.%6N') + '] !!'.red + "worker #{worker.id} " + ' ' * 11 * 3 + 'fail: '.red + payload.to_s +
+          ", retries: #{retries}\n"
+    retry if (retries -= 1) > 0
   end
 
   # Performs the task that all this queueing has been about.
   # Currently, it just sleeps for a random time and returns the milliseconds.
   class Task
+    attr_reader :id
     def initialize(id)
       @id = id.to_i
-      puts '> initialized worker '.green + id.to_s
+      print Time.now.strftime('%H:%M:%S.%6N') + '] > initialized worker '.green + id.to_s + "\n"
     end
 
     def work(payload)
-      Timeout.timeout(5) do
-        puts "- worker #{@id}, work: #{payload}"
-        sleep(payload)
-        puts '>>'.green + "worker #{@id}, done: #{payload}"
-      end
-    rescue Timeout::Error
-      puts '!!'.red + "worker #{@id}, caught: #{payload}"
+      print Time.now.strftime('%H:%M:%S.%6N') + "] - worker #{@id} " + ' ' * 11 + 'work: '.yellow + payload.to_s + "\n"
+
+      sleep(payload / 10)
+
+      print Time.now.strftime('%H:%M:%S.%6N') + '] >>'.green + "worker #{@id} " + ' ' * 11 * 2 + 'done: '.green +
+            payload.to_s + "\n"
     end
   end
 end
 
-if $PROGRAM_NAME == __FILE__
-  args = Trollop.options do
-    opt :n_threads, 'The number of consumer threads', type: :integer
-    opt :total, 'The number of ints to loop through', type: :integer
-    opt :queue_size, 'The max amount of queue items waiting for workers',
-        type: :integer
-    opt :delay, 'Seconds that each worker waits for before the next job',
-        type: :integer
-  end
-
-  LifeKey.new(args).run
-end
+LifeKey.new.run if $PROGRAM_NAME == __FILE__
